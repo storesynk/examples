@@ -39,8 +39,13 @@ const nextConfig: NextConfig = {
   // TS7's native compiler doesn't expose the programmatic API Next uses for type checking; the CLI path does.
   experimental: {
     useTypeScriptCli: true,
-    // Codespaces port forwarding sends a localhost host header, which fails the Server Actions origin check.
-    serverActions: { allowedOrigins: ["*.app.github.dev"] },
+    // Codespaces port forwarding rewrites `origin` to localhost:<port> while `x-forwarded-host` stays *.app.github.dev.
+    serverActions: {
+      allowedOrigins: [
+        "*.app.github.dev",
+        ...(process.env.CODESPACES ? [`localhost:${process.env.PORT ?? "3000"}`] : []),
+      ],
+    },
   },
   // Next 16 blocks cross-origin requests to dev-only assets (HMR, /_next) unless
   // the origin is allow-listed. Ignored by `next build` / `next start`.
