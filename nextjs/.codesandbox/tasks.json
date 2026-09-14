@@ -1,0 +1,25 @@
+{
+  "setupTasks": [
+    {
+      "name": "Install dependencies",
+      "command": "npm ci"
+    }
+  ],
+  "tasks": {
+    "dev": {
+      "name": "Storefront (dev)",
+      "command": "npm run dev",
+      "runAtStart": true,
+      "preview": {
+        "port": 3000
+      }
+    },
+    "production": {
+      "name": "Storefront (production build)",
+      "command": "npm run build && npm run start",
+      "preview": {
+        "port": 3000
+      }
+    }
+  }
+}

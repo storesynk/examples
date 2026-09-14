@@ -1,0 +1,4 @@
+# OS and editor files. Each example keeps its own .gitignore for build output and env files.
+.DS_Store
+.idea/
+.vscode/
