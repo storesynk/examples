@@ -2,6 +2,11 @@
 
 # dependencies
 node_modules
+# npm only: package-lock.json is the lockfile the codespace installs from
+pnpm-lock.yaml
+yarn.lock
+bun.lock
+bun.lockb
 /.pnp
 .pnp.*
 .yarn/*
