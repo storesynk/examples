@@ -8,22 +8,26 @@ on-page agents integrate exactly as they would with a real theme.
 
 ## Setup
 
-### CodeSandbox
+### GitHub Codespaces
 
-1. Fork the template. The Devbox installs dependencies and starts the dev server on
-   port 3000 by itself.
-2. Open **Env vars** in the left sidebar and add, at minimum:
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/storesynk/examples?devcontainer_path=.devcontainer/nextjs/devcontainer.json&quickstart=1)
+
+1. Open the link above and sign in to GitHub. The create page asks for two secrets:
    - `SHOPIFY_STORE_DOMAIN`: your `*.myshopify.com` domain
    - `SHOPIFY_STOREFRONT_ACCESS_TOKEN`: the **public** token from the Headless sales
      channel (never an Admin token)
-3. Restart the **Storefront (dev)** task. The preview opens at
-   `https://<devbox-id>-3000.csb.app`; open it in its own tab.
+2. Click **Create codespace**. It installs dependencies and starts the dev server in the
+   terminal by itself.
+3. When port 3000 is forwarded, click **Open in Browser**. The storefront runs at
+   `https://<codespace-name>-3000.app.github.dev`.
 
-Env vars stay with your Devbox and are not copied when someone forks it. The site URL is
-derived from the Devbox id, so no URL setting is needed. For customer login, set
-`NEXT_PUBLIC_ENABLE_AUTH=1`, `SHOPIFY_CUSTOMER_ACCOUNT_API_CLIENT_ID` and
-`CUSTOMER_ACCOUNT_SESSION_SECRET`, and add the preview URL to the Customer Account API
-allowed origins and callback URIs in the Headless channel.
+Secrets are saved to your GitHub account for this repository and reused by later
+codespaces. If you add or change one after creation, stop and restart the codespace so it
+picks up the new value. The site URL is derived from the codespace name, so no URL setting
+is needed. For customer login, also add `NEXT_PUBLIC_ENABLE_AUTH=1`,
+`SHOPIFY_CUSTOMER_ACCOUNT_API_CLIENT_ID` and `CUSTOMER_ACCOUNT_SESSION_SECRET` as secrets,
+and add the storefront URL to the Customer Account API allowed origins and callback URIs
+in the Headless channel.
 
 ### Local
 

@@ -29,11 +29,13 @@ npm ci
 npm run dev                  # http://localhost:3000
 ```
 
-Each example's README covers its full setup, including running it in a CodeSandbox Devbox.
+To run an example in the browser instead, open it in GitHub Codespaces. Each example's
+README has an **Open in GitHub Codespaces** button and its full setup.
 
 ## Adding an example
 
 Create a new top-level folder that installs and runs on its own. Pin `@storesynk/*` to
-published versions (no `workspace:` or `file:` links), include a `.env.example`, a README,
-and a `.codesandbox/tasks.json` if it should open in CodeSandbox. Then add a row to the
-table above.
+published versions (no `workspace:` or `file:` links), and include a `.env.example` and a
+README. For Codespaces, add `.devcontainer/<example>/devcontainer.json` at the repo root
+with `workspaceFolder` pointing at the example folder (copy the `nextjs` one). Then add a
+row to the table above.

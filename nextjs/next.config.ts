@@ -37,11 +37,14 @@ function assertRequiredEnv() {
 const nextConfig: NextConfig = {
   cacheComponents: true,
   // TS7's native compiler doesn't expose the programmatic API Next uses for type checking; the CLI path does.
-  experimental: { useTypeScriptCli: true },
-  // CodeSandbox Devboxes serve the dev server through https://<id>-3000.csb.app.
+  experimental: {
+    useTypeScriptCli: true,
+    // Codespaces port forwarding sends a localhost host header, which fails the Server Actions origin check.
+    serverActions: { allowedOrigins: ["*.app.github.dev"] },
+  },
   // Next 16 blocks cross-origin requests to dev-only assets (HMR, /_next) unless
   // the origin is allow-listed. Ignored by `next build` / `next start`.
-  allowedDevOrigins: ["*.csb.app"],
+  allowedDevOrigins: ["*.app.github.dev"],
   images: {
     deviceSizes: [1080, 1920],
     imageSizes: [],

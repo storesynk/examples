@@ -67,12 +67,12 @@ function envFlag(value: string | undefined, fallback: boolean): boolean {
 }
 
 // Site origin, used for metadata, sitemaps and the Customer Account login
-// allow-list. NEXT_PUBLIC_BASE_URL wins; inside a CodeSandbox Devbox the preview
-// origin is derived from CSB_SANDBOX_ID, so a fork needs no URL setting.
+// allow-list. NEXT_PUBLIC_BASE_URL wins; inside a GitHub Codespace the forwarded
+// port origin is derived from CODESPACE_NAME, so no URL setting is needed.
 const defaultUrl = process.env.NEXT_PUBLIC_BASE_URL
   ? process.env.NEXT_PUBLIC_BASE_URL
-  : process.env.CSB_SANDBOX_ID
-    ? `https://${process.env.CSB_SANDBOX_ID}-3000.csb.app`
+  : process.env.CODESPACE_NAME
+    ? `https://${process.env.CODESPACE_NAME}-3000.${process.env.GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN ?? "app.github.dev"}`
     : process.env.VERCEL_PROJECT_PRODUCTION_URL
       ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
       : "http://localhost:3000";

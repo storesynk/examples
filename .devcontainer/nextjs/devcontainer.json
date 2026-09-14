@@ -1,0 +1,32 @@
+{
+  "name": "Storesynk Next.js example",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:24",
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}/nextjs",
+  "hostRequirements": {
+    "cpus": 4
+  },
+  "secrets": {
+    "SHOPIFY_STORE_DOMAIN": {
+      "description": "Your store's *.myshopify.com domain.",
+      "documentationUrl": "https://github.com/storesynk/examples/tree/main/nextjs#github-codespaces"
+    },
+    "SHOPIFY_STOREFRONT_ACCESS_TOKEN": {
+      "description": "The PUBLIC Storefront API token from the Headless sales channel. Never an Admin token.",
+      "documentationUrl": "https://apps.shopify.com/headless"
+    }
+  },
+  "updateContentCommand": "npm ci",
+  "postAttachCommand": "npm run dev",
+  "forwardPorts": [3000],
+  "portsAttributes": {
+    "3000": {
+      "label": "Storefront",
+      "onAutoForward": "notify"
+    }
+  },
+  "customizations": {
+    "codespaces": {
+      "openFiles": ["nextjs/README.md"]
+    }
+  }
+}
