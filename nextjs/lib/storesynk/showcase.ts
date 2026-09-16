@@ -288,7 +288,13 @@ async function discoverBundle(namespace: string): Promise<string | null> {
     const parsed = parseBundleMetaobject(node);
     if (!parsed || !isBundleActive(parsed.entry)) continue;
     const members = resolveBundleMembers(parsed.entry, parsed.products);
-    const handle = members?.[0]?.product.handle;
+    if (!members) continue;
+    // The bundle's own product (carries its image + price); first member as fallback.
+    const parent = node.parent?.reference;
+    const handle =
+      (parent?.__typename === "Product" ? parent.handle : null) ??
+      members[0]?.product.handle ??
+      null;
     if (handle) return handle;
   }
   return null;

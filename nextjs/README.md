@@ -10,7 +10,7 @@ on-page agents integrate exactly as they would with a real theme.
 
 ### GitHub Codespaces
 
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/storesynk/examples?devcontainer_path=.devcontainer/nextjs/devcontainer.json&quickstart=1)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/storesynk/examples?devcontainer_path=.devcontainer/nextjs/devcontainer.json)
 
 1. Open the link above and sign in to GitHub. The create page asks for two secrets:
    - `SHOPIFY_STORE_DOMAIN`: your `*.myshopify.com` domain

@@ -260,6 +260,7 @@
   },
   "product": {
     "aboutThisItem": "Description",
+    "addBoxToCart": "Add box to cart",
     "addedToCart": "✓ Added to Cart!",
     "addingQuantity": "Adding {quantity}...",
     "addingToCart": "Adding to Cart...",
@@ -267,6 +268,7 @@
     "addToCart": "Add to Cart",
     "availableInBundles": "Available in Bundles",
     "barcode": "Barcode",
+    "boxEmpty": "Pick items to fill your box.",
     "brand": "Brand",
     "breadcrumb": {
       "home": "Home",
@@ -325,6 +327,7 @@
     },
     "featuredBadge": "Assistant's pick",
     "freeShipping": "FREE",
+    "freeShippingUnlocked": "Free shipping unlocked!",
     "goToImage": "Go to image {number}",
     "inCart": "You have {quantity} {quantity, plural, one {item} other {items}} in your cart",
     "increaseQuantity": "Increase quantity",
@@ -336,9 +339,13 @@
     "oneTimePurchase": "One-time purchase",
     "outOfStock": "Out of Stock",
     "pairsWith": "Pairs Well With",
+    "pickRange": "Pick '{min}'–'{max}'",
     "purchaseOptions": "Purchase options",
     "quantity": "Quantity",
     "recommendations": "You May Also Like",
+    "removeFromBox": "Remove from box",
+    "sectionMet": "of '{max}' ✓",
+    "sectionNeeded": "of '{min}' needed",
     "seeAllSpecs": "See all specs",
     "selectVariant": "Please select a variant",
     "selectVariantLabel": "Select {name}: {value}",
@@ -351,7 +358,9 @@
     "unavailableVariantLabel": "{name}: {value} (unavailable)",
     "viewAll": "View All",
     "viewImage": "View image {current} of {total}",
-    "visitStore": "Visit the store"
+    "visitStore": "Visit the store",
+    "youSave": "You save",
+    "yourBox": "Your box"
   },
   "search": {
     "all": "All",
