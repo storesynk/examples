@@ -81,7 +81,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
                 </p>
                 <cart-line-list className="block flex-1 overflow-y-auto px-5 group-[[ss-empty]]:hidden">
                   <cart-line className="flex items-center gap-2.5 border-b border-border py-2.5 transition-opacity [&[ss-loading]]:opacity-50">
-                    <show-line-image className="block size-12 shrink-0 overflow-hidden rounded-md bg-muted [&_img]:h-full [&_img]:w-full [&_img]:object-cover"></show-line-image>
+                    <show-line-image className="block size-12 shrink-0 self-start overflow-hidden rounded-md bg-muted [&_img]:h-full [&_img]:w-full [&_img]:object-cover"></show-line-image>
                     <div className="min-w-0 flex-1">
                       <show-line-title className="block truncate text-sm font-medium"></show-line-title>
                       <show-line-variant className="block text-xs text-muted-foreground [&[ss-empty]]:hidden"></show-line-variant>
@@ -91,6 +91,22 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
                         <show-line-price></show-line-price>
                       </span>
                       <show-line-discount className="block text-xs text-muted-foreground [&[ss-empty]]:hidden"></show-line-discount>
+                      {/* A merged bundle / mix & match line: the engine exposes the Cart Transform
+                          components, always expanded here (add a toggle-line-components disclosure
+                          to make them collapsible); the list hides via [ss-empty] on plain lines. */}
+                      <cart-line-component-list className="mt-2 grid gap-2 [&[ss-empty]]:hidden">
+                        <div className="flex items-center gap-2">
+                          <show-line-image className="block size-9 shrink-0 overflow-hidden rounded-md border border-border bg-muted [&_img]:h-full [&_img]:w-full [&_img]:object-cover"></show-line-image>
+                          <span className="min-w-0 flex-1">
+                            <span className="flex items-baseline gap-1 text-xs">
+                              <show-line-quantity className="font-mono tabular-nums"></show-line-quantity>
+                              <span aria-hidden="true">&times;</span>
+                              <show-line-title className="truncate"></show-line-title>
+                            </span>
+                            <show-line-variant className="block text-xs text-muted-foreground [&[ss-empty]]:hidden"></show-line-variant>
+                          </span>
+                        </div>
+                      </cart-line-component-list>
                       {/* In-cart subscription upsell: both controls self-hide via
                           [ss-empty] when the line's merchandise has no selling plans
                           (toggle) / while the line is one-time (frequency picker). */}
