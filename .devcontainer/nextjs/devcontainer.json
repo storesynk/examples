@@ -15,13 +15,13 @@
       "documentationUrl": "https://apps.shopify.com/headless"
     }
   },
-  "updateContentCommand": "npm ci",
-  "postAttachCommand": "npm run dev",
+  "updateContentCommand": "npm ci && npm run codegen",
+  "postAttachCommand": "npx next dev",
   "forwardPorts": [3000],
   "portsAttributes": {
     "3000": {
       "label": "Storefront",
-      "onAutoForward": "notify"
+      "onAutoForward": "openBrowser"
     }
   },
   "customizations": {

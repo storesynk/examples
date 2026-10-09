@@ -16,9 +16,12 @@ on-page agents integrate exactly as they would with a real theme.
    - `SHOPIFY_STORE_DOMAIN`: your `*.myshopify.com` domain
    - `SHOPIFY_STOREFRONT_ACCESS_TOKEN`: the **public** token from the Headless sales
      channel (never an Admin token)
+
+   Only this link and **New with options…** show the secrets form. The quick
+   **Create codespace on main** button and the codespaces list page skip it.
 2. Click **Create codespace**. It installs dependencies and starts the dev server in the
    terminal by itself.
-3. When port 3000 is forwarded, click **Open in Browser**. The storefront runs at
+3. When port 3000 is forwarded, the storefront opens in a new browser tab at
    `https://<codespace-name>-3000.app.github.dev`.
 
 Secrets are saved to your GitHub account for this repository and reused by later
